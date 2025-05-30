@@ -1,6 +1,6 @@
 ---
 
-## 🔐 Vault Integration with Kubernetes using Agent Injector
+🔐 Vault Integration with Kubernetes using Agent Injector
 
 *Prerequisites*
 
