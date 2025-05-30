@@ -92,6 +92,7 @@ vault kv get kvv2/myapp
 **vault-injector-deployment.yaml**:
 
 ```yaml
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -108,8 +109,8 @@ spec:
         app: vault-demo-injector
       annotations:
         vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/role: "my-app"
-        vault.hashicorp.com/agent-inject-secret-config.txt: "kvv2/data/myapp"
+        vault.hashicorp.com/role: my-app
+        vault.hashicorp.com/agent-inject-secret-config.txt: kvv2/data/myapp
         vault.hashicorp.com/agent-inject-template-config.txt: |
           {{- with secret "kvv2/data/myapp" -}}
           username: {{ .Data.data.username }}
@@ -120,7 +121,10 @@ spec:
       containers:
         - name: app
           image: busybox
-          command: [ "sleep", "3600" ]
+          command:
+            - sleep
+            - "3600"
+
 ```
 
 Apply it:
