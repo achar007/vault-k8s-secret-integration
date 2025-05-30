@@ -96,7 +96,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vault-demo-injector
-  namespace: my-namespace
+  namespace: mynamespace
 spec:
   replicas: 1
   selector:
