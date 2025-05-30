@@ -2,6 +2,8 @@
 
 ## 🔐 Vault Integration with Kubernetes using Agent Injector
 
+
+
 ###  Prerequisites
 
 * Vault deployed and initialized
